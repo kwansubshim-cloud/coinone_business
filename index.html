@@ -58,11 +58,18 @@
             text-decoration: none;
         }
 
-        /* --- 로고 이미지 스타일 추가 --- */
         .logo img {
             height: 28px;
         }
-        /* --- 로고 이미지 스타일 끝 --- */
+        
+        /* --- 로고 텍스트 스타일 추가 --- */
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-dark);
+            margin-left: 0.5rem;
+        }
+        /* --- 로고 텍스트 스타일 끝 --- */
 
         .nav-links {
             display: flex;
@@ -615,7 +622,8 @@
     <header>
         <nav>
             <a href="#" class="logo">
-                <img src="https://raw.githubusercontent.com/kwansubshim-cloud/coinone_business/refs/heads/main/coinone-logo-blue.png" alt="Coinone Business Logo">
+                <img src="https://raw.githubusercontent.com/kwansubshim-cloud/coinone_business/refs/heads/main/coinone-logo-blue.png" alt="Coinone Logo">
+                <span>Business</span>
             </a>
             <div class="nav-links">
                 <a href="#why-us">Why Coinone</a>
@@ -792,6 +800,5 @@
         </div>
     </section>
 
-   
 </body>
 </html>
