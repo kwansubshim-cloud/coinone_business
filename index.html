@@ -28,6 +28,7 @@
             line-height: 1.6;
             color: var(--text-dark);
             overflow-x: hidden;
+            background-color: var(--white);
         }
 
         /* 헤더 */
@@ -38,7 +39,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 98, 255, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 98, 255, 0.08);
             transition: all 0.3s ease;
         }
 
@@ -57,6 +58,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--primary-blue);
+            text-decoration: none;
         }
 
         .logo span {
@@ -116,40 +118,19 @@
 
         /* 히어로 섹션 */
         .hero {
-            padding: 8rem 5% 4rem;
-            background: linear-gradient(135deg, #0062FF 0%, #00D4FF 50%, #0062FF 100%);
-            background-size: 200% 200%;
-            animation: gradientShift 10s ease infinite;
+            padding: 10rem 5% 6rem;
+            background: var(--bg-gray);
             position: relative;
             overflow: hidden;
-            min-height: 90vh;
             display: flex;
             align-items: center;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,202.7C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            opacity: 0.3;
         }
 
         .hero-content {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.1fr;
             gap: 4rem;
             align-items: center;
             position: relative;
@@ -164,49 +145,33 @@
             from { opacity: 0; transform: translateX(-30px); }
             to { opacity: 1; transform: translateX(0); }
         }
+        
+        .hero-text .section-label {
+            text-align: left;
+        }
 
         .hero-text h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            color: white;
+            color: var(--text-dark);
             margin-bottom: 1.5rem;
             line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .hero-text .subtitle {
             font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            margin-bottom: 3rem;
         }
 
         .btn-primary {
-            background: white;
-            color: var(--primary-blue);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--primary-blue);
             color: white;
             padding: 1rem 2.5rem;
             border-radius: 50px;
@@ -214,40 +179,31 @@
             font-weight: 700;
             font-size: 1.1rem;
             transition: all 0.3s;
-            border: 2px solid white;
+            box-shadow: 0 10px 30px rgba(0, 98, 255, 0.2);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 98, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--light-blue);
             display: inline-block;
         }
 
         .btn-secondary:hover {
-            background: white;
-            color: var(--primary-blue);
+            background: var(--light-blue);
             transform: translateY(-3px);
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
-        }
-
-        .trust-badge::before {
-            content: '✓';
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            font-weight: bold;
         }
 
         .hero-visual {
@@ -264,13 +220,8 @@
             background: white;
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-            transform: perspective(1000px) rotateY(-10deg);
-            transition: transform 0.3s;
-        }
-
-        .dashboard-preview:hover {
-            transform: perspective(1000px) rotateY(0deg);
+            box-shadow: 0 30px 60px rgba(0, 98, 255, 0.1);
+            border: 1px solid #e8e8e8;
         }
 
         .dashboard-header {
@@ -278,33 +229,35 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--bg-gray);
+        }
+        
+        .dashboard-header h3 {
+             font-size: 1.5rem;
         }
 
         .dashboard-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .stat-card {
             background: var(--bg-gray);
             padding: 1.5rem;
             border-radius: 15px;
-            transition: all 0.3s;
-        }
-
-        .stat-card:hover {
-            background: linear-gradient(135deg, var(--light-blue), white);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 98, 255, 0.1);
         }
 
         .stat-label {
             color: var(--text-gray);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .stat-label i { /* Simple icon styling */
+            font-style: normal;
         }
 
         .stat-value {
@@ -312,11 +265,11 @@
             font-weight: bold;
             color: var(--text-dark);
         }
-
-        .stat-change {
-            color: #10B981;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
+        
+        .stat-subtext {
+             font-size: 0.85rem;
+             color: var(--text-gray);
+             margin-top: 0.25rem;
         }
 
         /* 공통 섹션 스타일 */
@@ -336,23 +289,70 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
         }
 
         .section-description {
             color: var(--text-gray);
             font-size: 1.1rem;
             line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Why Coinone 섹션 */
+        .why-us {
+             padding: 5rem 5%;
+             background: white;
+        }
+        
+        .why-us-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+             gap: 2rem;
+             max-width: 1200px;
+             margin: 0 auto;
+        }
+        
+        .why-us-card {
+             background: var(--bg-gray);
+             padding: 2.5rem;
+             border-radius: 20px;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             text-align: center;
+             transition: all 0.3s ease;
+        }
+        
+        .why-us-card:hover {
+            transform: translateY(-10px);
+            background: white;
+            box-shadow: 0 20px 50px rgba(0,98,255,0.1);
+        }
+
+        .why-us-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .why-us-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .why-us-card p {
+            color: var(--text-gray);
         }
 
         /* 특징 섹션 */
         .features {
             padding: 5rem 5%;
-            background: white;
-            position: relative;
+            background: var(--bg-gray);
         }
         
         .features-grid {
@@ -365,85 +365,46 @@
 
         .feature-card {
             background: white;
-            border: 2px solid var(--bg-gray);
+            border: 1px solid #e8e8e8;
             padding: 2.5rem;
             border-radius: 20px;
             transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            opacity: 0;
-            transition: opacity 0.4s;
-            z-index: 0;
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 98, 255, 0.15);
-            border-color: transparent;
-        }
-
-        .feature-card > * {
-            position: relative;
-            z-index: 1;
+            box-shadow: 0 20px 40px rgba(0, 98, 255, 0.1);
         }
 
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--light-blue), white);
+            background: var(--light-blue);
+            color: var(--primary-blue);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             transition: all 0.4s;
-        }
-
-        .feature-card:hover .feature-icon {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--text-dark);
-            transition: color 0.4s;
-        }
-
-        .feature-card:hover h3 {
-            color: white;
         }
 
         .feature-card p {
             color: var(--text-gray);
-            line-height: 1.6;
-            transition: color 0.4s;
-        }
-
-        .feature-card:hover p {
-            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
         }
 
         /* 이용 절차 섹션 */
         .procedure {
             padding: 5rem 5%;
-            background: var(--bg-gray);
+            background: white;
         }
 
         .procedure-grid {
@@ -470,15 +431,9 @@
             padding: 2rem;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             position: relative;
             z-index: 1;
-        }
-
-        .procedure-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,98,255,0.1);
         }
 
         .procedure-step {
@@ -493,8 +448,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin: 0 auto 1.5rem;
-            border: 4px solid white;
-            box-shadow: 0 0 0 4px var(--primary-blue);
+            border: 4px solid var(--light-blue);
         }
 
         .procedure-card h3 {
@@ -507,63 +461,48 @@
             color: var(--text-gray);
             font-size: 0.9rem;
         }
+        
+        .procedure-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
 
         /* CTA 섹션 */
         .cta-section {
             padding: 5rem 5%;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: var(--dark-blue);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
-            animation: pulse 3s ease infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0; }
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
         .cta-content h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: white;
             margin-bottom: 1.5rem;
         }
 
         .cta-content p {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* 푸터 */
         footer {
-            padding: 3rem 5%;
+            padding: 4rem 5% 2rem;
             background: var(--text-dark);
-            color: white;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 3rem;
         }
 
@@ -574,13 +513,14 @@
         }
 
         .footer-brand p {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 0.9rem;
         }
 
         .footer-links h4 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: white;
+            font-size: 1.1rem;
         }
 
         .footer-links ul {
@@ -601,36 +541,11 @@
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 2rem;
+            margin-top: 3rem;
             padding-top: 2rem;
             text-align: center;
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* 플로팅 요소들 */
-        .floating-element {
-            position: absolute;
-            animation: float 6s ease-in-out infinite;
-            opacity: 0.1;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        .floating-element.circle {
-            width: 100px;
-            height: 100px;
-            background: white;
-            border-radius: 50%;
-        }
-
-        .floating-element.square {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 10px;
         }
 
         /* 반응형 */
@@ -641,6 +556,9 @@
              .procedure-line {
                 display: none;
             }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -648,10 +566,16 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-             .hero-buttons, .trust-badges {
+             .hero-buttons {
                 justify-content: center;
             }
-            .features-grid, .procedure-grid {
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .why-us-grid, .features-grid, .procedure-grid {
                 grid-template-columns: 1fr;
             }
             .footer-content {
@@ -664,116 +588,127 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
+            <a href="#" class="logo">
                 COINONE<span>Business</span>
-            </div>
+            </a>
             <div class="nav-links">
-                <a href="#features">서비스 특징</a>
+                <a href="#why-us">Why Coinone</a>
+                <a href="#features">법인 서비스</a>
                 <a href="#procedure">이용 절차</a>
-                <a href="#" class="cta-button">법인 상담 신청</a>
+                <a href="#contact" class="cta-button">법인 상담 신청</a>
             </div>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="floating-element circle" style="top: 10%; right: 10%;"></div>
-        <div class="floating-element square" style="bottom: 20%; left: 5%;"></div>
-        
         <div class="hero-content">
             <div class="hero-text">
-                <h1>기관 투자자를 위한<br>국내 최고의<br>디지털 자산 파트너</h1>
-                <p class="subtitle">코인원의 10년 운영 노하우와 최첨단 기술력으로<br>안전하고 효율적인 법인 거래 환경을 제공합니다</p>
+                <div class="section-label">COINONE BUSINESS</div>
+                <h1>기관을 위한<br>가장 신뢰할 수 있는<br>디지털 자산 파트너</h1>
+                <p class="subtitle">10년의 운영 노하우와 업계 최고 수준의 인프라를 바탕으로<br>안전하고 효율적인 법인 거래 환경을 제공합니다.</p>
                 
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary">법인 계정 개설</a>
+                    <a href="#" class="btn-primary">가입 절차 안내</a>
                     <a href="#" class="btn-secondary">서비스 소개서</a>
-                </div>
-                
-                <div class="trust-badges">
-                    <div class="trust-badge">10년 무사고 운영</div>
-                    <div class="trust-badge">ISMS 인증</div>
-                    <div class="trust-badge">24/7 전담 지원</div>
                 </div>
             </div>
             
             <div class="hero-visual">
                 <div class="dashboard-preview">
                     <div class="dashboard-header">
-                        <h3>법인 대시보드</h3>
-                        <span style="color: var(--primary-blue);">실시간</span>
+                        <h3>법인 자산 현황</h3>
+                        <span style="color: var(--primary-blue); font-weight: 600;">실시간</span>
                     </div>
                     <div class="dashboard-stats">
                         <div class="stat-card">
-                            <div class="stat-label">일일 거래량</div>
-                            <div class="stat-value">₩125.4B</div>
-                            <div class="stat-change">▲ 12.5%</div>
+                            <div class="stat-label"><i>📈</i> 총 자산가치 (KRW)</div>
+                            <div class="stat-value">8,927,000,000</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">총 자산가치</div>
-                            <div class="stat-value">₩892.7B</div>
-                            <div class="stat-change">▲ 8.3%</div>
+                            <div class="stat-label"><i>📊</i> 일일 거래량 (KRW)</div>
+                            <div class="stat-value">1,254,000,000</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">활성 법인</div>
-                            <div class="stat-value">2,847</div>
-                            <div class="stat-change">▲ 23개</div>
+                            <div class="stat-label"><i>🏛️</i> 거래 가능 자산</div>
+                            <div class="stat-value">200+</div>
+                            <div class="stat-subtext">BTC, ETH, USDT 마켓 포함</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">API 처리속도</div>
-                            <div class="stat-value">0.8ms</div>
-                            <div class="stat-change">최적화됨</div>
+                            <div class="stat-label"><i>🛡️</i> 보안 레벨</div>
+                            <div class="stat-value">최상</div>
+                            <div class="stat-subtext">ISMS 인증 및 AML 시스템</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <section class="why-us" id="why-us">
+        <div class="section-header">
+            <div class="section-label">TRUST & SECURITY</div>
+            <h2 class="section-title">파트너가 신뢰하는 이유</h2>
+            <p class="section-description">
+                코인원은 투명성과 안정성을 최우선 가치로 삼고, 법인 고객을 위한
+                가장 안전한 디지털 자산 인프라를 구축했습니다.
+            </p>
+        </div>
+        <div class="why-us-grid">
+            <div class="why-us-card">
+                <div class="why-us-icon">🏦</div>
+                <h3>은행 실명계좌 파트너</h3>
+                <p>카카오뱅크와의 제휴를 통해 안정적인 원화 입출금과 투명한 자금 관리를 보장합니다.</p>
+            </div>
+            <div class="why-us-card">
+                <div class="why-us-icon">🛡️</div>
+                <h3>10년 무사고 보안 노하우</h3>
+                <p>2014년 창립 이래 단 한 건의 해킹 사고 없이 고객 자산을 안전하게 보호해 온 기술력</p>
+            </div>
+            <div class="why-us-card">
+                <div class="why-us-icon">📜</div>
+                <h3>자금세탁방지(AML) 시스템</h3>
+                <p>독립적인 AML 센터 운영과 강화된 고객확인(KYC) 제도로 가장 투명한 거래 환경을 제공합니다.</p>
+            </div>
+        </div>
+    </section>
+
 
     <section class="features" id="features">
         <div class="section-header">
-            <div class="section-label">Why Coinone Business</div>
-            <h2 class="section-title">코인원만의 차별화된 법인 서비스</h2>
-            <p class="section-description">
-                국내 최초 디지털 자산 거래소의 축적된 노하우와 기술력으로
-                법인 고객님께 최상의 거래 환경을 제공합니다
-            </p>
+            <div class="section-label">PREMIUM SOLUTION</div>
+            <h2 class="section-title">최상의 거래 경험을 위한<br>법인 맞춤형 솔루션</h2>
         </div>
         
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>업계 최고 수준의 보안</h3>
-                <p>콜드월렛 99% 보관, 멀티시그 적용, ISMS 인증 획득으로 고객 자산을 철저히 보호합니다</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>초고속 매칭 엔진</h3>
-                <p>초당 200만 건 처리 가능한 자체 개발 매칭 엔진으로 대량 거래도 빠르고 안정적으로 처리</p>
-            </div>
-            
-            <div class="feature-card">
                 <div class="feature-icon">💎</div>
-                <h3>VIP 전담 매니저</h3>
-                <p>법인 전담 매니저가 24/7 맞춤형 지원을 제공하여 모든 거래를 원활하게 서포트</p>
+                <h3>VIP 전담 매니저 지원</h3>
+                <p>가입부터 거래, 자산 관리까지 모든 과정을 1:1로 지원하는 전문 매니저를 배정하여 원활한 소통과 신속한 문제 해결을 돕습니다.</p>
             </div>
-            
             <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>풍부한 유동성</h3>
-                <p>국내 최대 규모 유동성 풀과 타이트한 스프레드로 최적의 거래 조건 제공</p>
+                <div class="feature-icon">🌊</div>
+                <h3>풍부한 유동성과 호가</h3>
+                <p>국내 최고 수준의 유동성으로 대량의 주문도 슬리피지 없이 안정적으로 체결하여 최적의 거래 환경을 제공합니다.</p>
             </div>
-            
             <div class="feature-card">
                 <div class="feature-icon">🔌</div>
-                <h3>강력한 API 지원</h3>
-                <p>REST API, WebSocket 완벽 지원으로 알고리즘 트레이딩 및 시스템 연동 가능</p>
+                <h3>강력하고 빠른 API</h3>
+                <p>알고리즘 트레이딩, 시스템 연동 등 기관의 다양한 요구에 대응하는 REST/WebSocket API를 완벽하게 지원합니다.</p>
             </div>
-            
             <div class="feature-card">
                 <div class="feature-icon">💰</div>
-                <h3>경쟁력 있는 수수료</h3>
-                <p>거래량 기반 할인 정책과 법인 전용 우대 수수료로 거래 비용 최소화</p>
+                <h3>경쟁력 있는 수수료 정책</h3>
+                <p>거래량에 따른 단계별 할인 혜택과 법인 전용 우대 프로그램을 통해 거래 비용을 효과적으로 절감할 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>투명한 거래 보고서</h3>
+                <p>모든 거래 내역과 자산 현황을 투명하게 확인할 수 있는 맞춤형 보고서를 제공하여 회계 및 세무 처리를 지원합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏛️</div>
+                <h3>기관용 커스터디(수탁)</h3>
+                <p>자회사 코인원플러스를 통해 안전한 콜드월렛 보관, 예치, 스테이킹 등 기관을 위한 전문적인 수탁 서비스를 제공합니다.</p>
             </div>
         </div>
     </section>
@@ -801,65 +736,6 @@
             <div class="procedure-card">
                 <div class="procedure-step">3</div>
                 <h3>실명 계좌 연동</h3>
-                <p>심사 통과 후, 발급받은 카카오뱅크 법인 계좌를 코인원 계정에 연동하여 원화 입출금 준비를 마칩니다.</p>
+                <p>심사 통과 후, 카카오뱅크 법인 계좌를 코인원 계정에 연동하여 원화 입출금 준비를 마칩니다.</p>
             </div>
             <div class="procedure-card">
-                <div class="procedure-step">4</div>
-                <h3>코인원 서비스 이용</h3>
-                <p>모든 준비가 완료되었습니다. 코인원이 제공하는 안전하고 강력한 디지털 자산 거래를 시작하세요.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section" id="contact">
-        <div class="cta-content">
-            <h2>지금 바로 코인원 법인 서비스의<br>전문가를 만나보세요</h2>
-            <p>
-                귀사의 비즈니스에 최적화된 디지털 자산 솔루션을 제안해 드립니다.<br>
-                지금 상담을 신청하고 성공적인 투자의 첫걸음을 내딛으세요.
-            </p>
-            <a href="#" class="btn-primary">법인 상담 신청하기</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>COINONE <span>Business</span></h3>
-                <p>주식회사 코인원 | 대표: 차명훈<br>
-                사업자등록번호: 261-81-07437<br>
-                서울특별시 영등포구 여의대로 108, 파크원 타워1동 45, 46층</p>
-            </div>
-            <div class="footer-links">
-                <h4>서비스</h4>
-                <ul>
-                    <li><a href="#">법인회원 가입</a></li>
-                    <li><a href="#">API 이용안내</a></li>
-                    <li><a href="#">수수료 정책</a></li>
-                    <li><a href="#">보안 안내</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>지원</h4>
-                <ul>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">자주 묻는 질문</a></li>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>회사</h4>
-                <ul>
-                    <li><a href="#">코인원 바로가기</a></li>
-                    <li><a href="#">인재 채용</a></li>
-                    <li><a href="#">문의하기</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2025 Coinone Inc. All rights reserved.
-        </div>
-    </footer>
-</body>
-</html>
