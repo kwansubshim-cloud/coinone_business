@@ -523,3 +523,304 @@
             background: var(--text-dark);
             color: rgba(255, 255, 255, 0.7);
         }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .footer-brand p {
+            line-height: 1.7;
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* 반응형 */
+        @media (max-width: 992px) {
+             .procedure-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+             .procedure-line {
+                display: none;
+            }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+             .hero-buttons, .trust-badges {
+                justify-content: center;
+            }
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .why-us-grid, .features-grid, .procedure-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="https://raw.githubusercontent.com/kwansubshim-cloud/coinone_business/refs/heads/main/coinone-logo-blue.png" alt="Coinone Business Logo">
+            </a>
+            <div class="nav-links">
+                <a href="#why-us">Why Coinone</a>
+                <a href="#features">법인 서비스</a>
+                <a href="#procedure">이용 절차</a>
+                <a href="#contact" class="cta-button">법인 상담 신청</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="section-label">COINONE BUSINESS</div>
+                <h1>기관을 위한<br>가장 신뢰할 수 있는<br>디지털 자산 파트너</h1>
+                <p class="subtitle">10년의 운영 노하우와 업계 최고 수준의 인프라를 바탕으로<br>안전하고 효율적인 법인 거래 환경을 제공합니다.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">가입 절차 안내</a>
+                    <a href="#" class="btn-secondary">서비스 소개서</a>
+                </div>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">10년 무사고 운영</div>
+                    <div class="trust-badge">ISMS 인증</div>
+                    <div class="trust-badge">24/7 전담 지원</div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <h3>법인 자산 현황</h3>
+                        <span style="color: var(--primary-blue); font-weight: 600;">실시간</span>
+                    </div>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-label"><i>📈</i> 총 자산가치 (KRW)</div>
+                            <div class="stat-value">8,927,000,000</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label"><i>📊</i> 일일 거래량 (KRW)</div>
+                            <div class="stat-value">1,254,000,000</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label"><i>🏛️</i> 거래 가능 자산</div>
+                            <div class="stat-value">200+</div>
+                            <div class="stat-subtext">BTC, ETH, USDT 마켓 포함</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label"><i>🛡️</i> 보안 레벨</div>
+                            <div class="stat-value">최상</div>
+                            <div class="stat-subtext">ISMS 인증 및 AML 시스템</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="why-us" id="why-us">
+        <div class="section-header">
+            <div class="section-label">TRUST & SECURITY</div>
+            <h2 class="section-title">파트너가 신뢰하는 이유</h2>
+            <p class="section-description">
+                코인원은 투명성과 안정성을 최우선 가치로 삼고, 법인 고객을 위한
+                가장 안전한 디지털 자산 인프라를 구축했습니다.
+            </p>
+        </div>
+        <div class="why-us-grid">
+            <div class="why-us-card">
+                <div class="why-us-icon">🏦</div>
+                <h3>은행 실명계좌 파트너</h3>
+                <p>카카오뱅크와의 제휴를 통해 안정적인 원화 입출금과 투명한 자금 관리를 보장합니다.</p>
+            </div>
+            <div class="why-us-card">
+                <div class="why-us-icon">🛡️</div>
+                <h3>10년 무사고 보안 노하우</h3>
+                <p>2014년 창립 이래 단 한 건의 해킹 사고 없이 고객 자산을 안전하게 보호해 온 기술력</p>
+            </div>
+            <div class="why-us-card">
+                <div class="why-us-icon">📜</div>
+                <h3>자금세탁방지(AML) 시스템</h3>
+                <p>독립적인 AML 센터 운영과 강화된 고객확인(KYC) 제도로 가장 투명한 거래 환경을 제공합니다.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="features" id="features">
+        <div class="section-header">
+            <div class="section-label">PREMIUM SOLUTION</div>
+            <h2 class="section-title">최상의 거래 경험을 위한<br>법인 맞춤형 솔루션</h2>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <h3>VIP 전담 매니저 지원</h3>
+                <p>가입부터 거래, 자산 관리까지 모든 과정을 1:1로 지원하는 전문 매니저를 배정하여 원활한 소통과 신속한 문제 해결을 돕습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌊</div>
+                <h3>풍부한 유동성과 호가</h3>
+                <p>국내 최고 수준의 유동성으로 대량의 주문도 슬리피지 없이 안정적으로 체결하여 최적의 거래 환경을 제공합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔌</div>
+                <h3>강력하고 빠른 API</h3>
+                <p>알고리즘 트레이딩, 시스템 연동 등 기관의 다양한 요구에 대응하는 REST/WebSocket API를 완벽하게 지원합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>경쟁력 있는 수수료 정책</h3>
+                <p>거래량에 따른 단계별 할인 혜택과 법인 전용 우대 프로그램을 통해 거래 비용을 효과적으로 절감할 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>투명한 거래 보고서</h3>
+                <p>모든 거래 내역과 자산 현황을 투명하게 확인할 수 있는 맞춤형 보고서를 제공하여 회계 및 세무 처리를 지원합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏛️</div>
+                <h3>기관용 커스터디(수탁)</h3>
+                <p>자회사 코인원플러스를 통해 안전한 콜드월렛 보관, 예치, 스테이킹 등 기관을 위한 전문적인 수탁 서비스를 제공합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="procedure" id="procedure">
+        <div class="section-header">
+            <div class="section-label">Easy Onboarding</div>
+            <h2 class="section-title">간편한 법인 서비스 이용 절차</h2>
+            <p class="section-description">
+                복잡한 과정 없이, 단 4단계만으로 코인원의 모든 법인 서비스를 이용할 수 있습니다.
+            </p>
+        </div>
+        <div class="procedure-grid">
+            <div class="procedure-line"></div>
+            <div class="procedure-card">
+                <div class="procedure-step">1</div>
+                <h3>법인회원 가입 신청</h3>
+                <p>온라인 상담 신청을 통해 필요 서류를 안내받고, 담당 매니저의 도움을 받아 가입을 진행합니다.</p>
+            </div>
+            <div class="procedure-card">
+                <div class="procedure-step">2</div>
+                <h3>고객 확인 및 심사</h3>
+                <p>제출된 서류를 바탕으로 신속하게 내부 심사를 진행하며, 대면을 통해 고객 확인(KYC)을 완료합니다.</p>
+            </div>
+            <div class="procedure-card">
+                <div class="procedure-step">3</div>
+                <h3>실명 계좌 연동</h3>
+                <p>심사 통과 후, 카카오뱅크 법인 계좌를 코인원 계정에 연동하여 원화 입출금 준비를 마칩니다.</p>
+            </div>
+            <div class="procedure-card">
+                <div class="procedure-step">4</div>
+                <h3>코인원 서비스 이용</h3>
+                <p>모든 준비가 완료되었습니다. 코인원이 제공하는 안전하고 강력한 디지털 자산 거래를 시작하세요.</p>
+            </div>
+        </div>
+        <div class="procedure-cta">
+             <a href="#" class="btn-primary">온보딩 가이드 다운로드</a>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2>지금, 코인원 법인 서비스의<br>전문가를 만나보세요</h2>
+            <p>
+                귀사의 비즈니스에 최적화된 디지털 자산 솔루션을 제안해 드립니다.<br>
+                지금 상담을 신청하고 성공적인 투자의 첫걸음을 내딛으세요.
+            </p>
+            <a href="#" class="btn-primary" style="padding: 1.2rem 3rem; font-size: 1.2rem;">법인 상담 신청하기</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>COINONE <span>Business</span></h3>
+                <p>주식회사 코인원 | 대표: 차명훈<br>
+                사업자등록번호: 261-81-07437<br>
+                서울특별시 영등포구 여의대로 108, 파크원 타워1동 45, 46층</p>
+            </div>
+            <div class="footer-links">
+                <h4>서비스</h4>
+                <ul>
+                    <li><a href="#">법인회원 가입</a></li>
+                    <li><a href="#">API 이용안내</a></li>
+                    <li><a href="#">수수료 정책</a></li>
+                    <li><a href="#">보안 안내</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>법적고지</h4>
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">고객확인제도</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Coinone Inc. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
